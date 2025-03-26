@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../public/css/RapSta.css" />
+</head>
+<body id="top">
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="../index.html" class="logo">
+          <img src="../public/media/cccccaaaatttt.png" alt="miaou" />
+        </a>
+        <img src="../public/media/menubtn.png" alt="menu hamburger" class="menu-hamburger"/>
+        <div class="nav-links">
+          <ul>
+            <li class="active"><a href="../index.html">Accueil</a></li>
+            <li><a href="../view/CV.html">Curriculum vitæ</a></li>
+            <li><a href="../view/compe.html">Compétences</a></li>
+            <li><a href="../view/veilTech.html">Veille technologique</a></li>
+            <li><a href="../view/RapSta.html">Rapport de stage</a></li>
+          </ul>
+        </div>
+    </nav>
+    <!-- Conteneur des liens hypertextes -->
+    <div class="links-container">
+      <button onclick="window.location.href='#top'" class="flipbook-button">← Rapport de 1ère année</button>
+      <button onclick="window.location.href='#flipbook2'" class="flipbook-button">→ Rapport de 2ème année</button>
+    </div>
+
+    <!-- Flipbook 1 -->
+    <div class="flipbook-container" id="flipbook1">
+      <div class="flipbook">
+        <div class="hard">Rapport de stage de 1ère année</div>
+        <div><img src="../public/media/RapStage1/1.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/2.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/3.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/4.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/5.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/6.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/7.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/8.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/9.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/10.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/11.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/12.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/13.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/14.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/15.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/16.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/17.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/18.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/19.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/20.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/21.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/22.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/23.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/24.png" alt="" /></div>
+        <div><img src="../public/media/RapStage1/25.png" alt="" /></div>
+      </div>
+    </div>
+
+    <!-- Flipbook 2 -->
+    <div class="flipbook-container" id="flipbook2">
+      <div class="flipbook2">
+        <div class="hard">Rapport de stage de 2ème année</div>
+        <div><img src="../public/media/RapStage2/1.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/2.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/3.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/4.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/5.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/6.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/7.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/8.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/9.png" alt="" /></div>
+        <div><img src="../public/media/RapStage2/10.png" alt="" /></div>
+      </div>
+    </div>
+
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/turn.js"></script>
+    <script>
+      $(document).ready(function () {
+          $(".flipbook").turn({
+              width: 1000,
+              height: 600,
+              autoCenter: true
+          });
+
+          $(".flipbook2").turn({
+              width: 1000,
+              height: 600,
+              autoCenter: true
+          });
+      });
+    </script>
+</body>
+</html>
