@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/CV.css" />
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <a href="start.html" class="logo">
+          <img src="../media/cccccaaaatttt.png" alt="miaou" />
+        </a>
+        <img src="../media/menubtn.png" alt="menu hamburger" class="menu-hamburger"/>
+        <div class="nav-links">
+          <ul>
+            <li class="active"><a href="start.html">Accueil</a></li>
+            <li><a href="CV.html">Curriculum vitæ</a></li>
+            <li><a href="compe.html">Compétences</a></li>
+            <li><a href="veilTech.html">Veille technologique</a></li>
+            <li><a href="RapSta.html">Rapport de stage</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+    <div class="button-container">
+      <!-- Bouton pour télécharger le PDF -->
+      <button class="btn" id="downloadPDF">Télécharger le PDF</button>
+    </div>
+
+    <div class="flipbook-container">
+      <canvas id="pdfCanvas"></canvas>
+    </div>       
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script> 
+    <script>
+      // Configuration initiale
+      const canvas = document.getElementById('pdfCanvas');
+      const ctx = canvas.getContext('2d');
+      const url = '../media/CV.pdf';  // Ton fichier PDF ici
+      const scale = 1.5;  // Ajout d'une valeur de scale (1.5 est une bonne valeur par défaut)
+      
+      // Définir le worker PDF.js
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+      // Fonction pour charger et afficher le PDF
+      function renderPDF(url) {
+          pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+              console.log('PDF chargé avec succès');
+              // Récupération de la première page
+              return pdfDoc.getPage(1);
+          }).then(function(page) {
+              const viewport = page.getViewport({ scale: scale });
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+
+              // Rendu de la page du PDF sur le canvas
+              const renderContext = {
+                  canvasContext: ctx,
+                  viewport: viewport,
+              };
+              return page.render(renderContext).promise;
+          }).catch(function(error) {
+              console.error('Erreur lors du chargement du PDF:', error);
+          });
+      }
+
+      // Télécharger le PDF
+      function downloadPDF() {
+          // Création d'un élément <a> pour le téléchargement
+          const link = document.createElement('a');
+          link.href = url;  // Utilise le lien du PDF
+          link.download = 'CV.pdf';  // Le nom du fichier téléchargé
+          document.body.appendChild(link);  // Ajouter au DOM pour Firefox
+          link.click();  // Simuler un clic pour télécharger le fichier
+          document.body.removeChild(link);  // Nettoyer
+      }
+
+      // Initialisation du rendu du PDF quand la page est chargée
+      document.addEventListener('DOMContentLoaded', function() {
+          renderPDF(url);
+          // Ajouter l'événement de clic sur le bouton de téléchargement
+          document.getElementById('downloadPDF').addEventListener('click', downloadPDF);
+      });
+    </script>
+</body>
+</html>
