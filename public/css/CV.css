@@ -95,12 +95,13 @@ canvas {
 
 .navbar .nav-links ul li a {
     text-decoration: none;
-    color: #dfc3fa;
+    color: #555aa6;
 }
 
 /* Lien actif */
 .navbar .nav-links ul li.active a {
     font-weight: 600;
+    color: #555aa6;
 }
 
 .navbar .nav-links ul li a:hover {
