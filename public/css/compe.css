@@ -48,12 +48,12 @@ body {
 
 .navbar .nav-links ul li a {
     text-decoration: none;
-    color: #dfc3fa;
+    color: #555aa6;
 }
 
 /* Lien actif */
 .navbar .nav-links ul li.active a {
-    color: #dfc3fa;
+    color: #555aa6;
     font-weight: 600;
 }
 
