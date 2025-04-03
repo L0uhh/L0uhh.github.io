@@ -9,6 +9,8 @@
 <body>
     <!-- Barre de navigation -->
     <nav class="navbar">
+        <div class="header-main"></div>
+        <div class="header-blur"></div>
         <a href="/index.html" class="logo">
           <img src="/public/media/cccccaaaatttt.png" alt="miaou" />
         </a>
@@ -23,7 +25,12 @@
           </ul>
         </div>
     </nav>
-    
+    <div class="flower flower-1">
+        <img src="../public/media/flower.png" alt="flower"/>
+    </div>
+    <div class="flower flower-2">
+        <img src="../public/media/flower.png" alt="flower"/>
+    </div>
     <div class="button-container">
       <!-- Bouton pour télécharger le PDF -->
       <button class="btn" id="downloadPDF">Télécharger le PDF</button>
@@ -32,14 +39,19 @@
     <div class="flipbook-container">
       <canvas id="pdfCanvas"></canvas>
     </div>       
-
+    <div class="flower flower-3">
+        <img src="../public/media/flower.png" alt="flower"/>
+    </div>
+    <div class="flower flower-4">
+        <img src="../public/media/flower.png" alt="flower"/>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script> 
     <script>
       // Configuration initiale
       const canvas = document.getElementById('pdfCanvas');
       const ctx = canvas.getContext('2d');
-      const url = '/public/media/CV.pdf';  // Ton fichier PDF ici
-      const scale = 1.5;  // Ajout d'une valeur de scale (1.5 est une bonne valeur par défaut)
+      const url = '/public/media/CV.pdf';
+      const scale = 1.5;
       
       // Définir le worker PDF.js
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
@@ -70,11 +82,11 @@
       function downloadPDF() {
           // Création d'un élément <a> pour le téléchargement
           const link = document.createElement('a');
-          link.href = url;  // Utilise le lien du PDF
-          link.download = 'CV.pdf';  // Le nom du fichier téléchargé
-          document.body.appendChild(link);  // Ajouter au DOM pour Firefox
-          link.click();  // Simuler un clic pour télécharger le fichier
-          document.body.removeChild(link);  // Nettoyer
+          link.href = url;
+          link.download = 'CV.pdf';
+          document.body.appendChild(link);
+          link.click(); 
+          document.body.removeChild(link);
       }
 
       // Initialisation du rendu du PDF quand la page est chargée
