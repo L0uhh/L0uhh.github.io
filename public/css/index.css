@@ -16,10 +16,10 @@ body {
 .navbar {
     position: relative;
     width: 100%;
-    min-height: 80px;
+    min-height: 100px;
     overflow: hidden;
     display: flex;
-    padding: 0 20px;
+    padding: 0 50px;
     z-index: 1;
 }
 
@@ -29,7 +29,7 @@ body {
     top: -30px;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 220px;
     background: linear-gradient(92deg, #C71585 -45.78%, #ed8576 91.37%, #000000 163.37%);
     z-index: 1;
     clip-path: path("M0 0H1920V100C1600 200 1200 50 800 150C400 250 200 100 0 150Z");
@@ -37,11 +37,11 @@ body {
 }
 
 .header-blur {
-    position: absolute;
+    Battlefieldposition: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 220px;
     background: linear-gradient(92deg, #C71585 -45.78%, #ed8576 91.37%, #000000 163.37%);
     z-index: 2;
     clip-path: path("M0 0H1920V100C1600 200 1200 50 800 150C400 250 200 100 0 150Z");
@@ -57,7 +57,7 @@ body {
 
 /* Logo */
 .navbar .logo img {
-    height: 60px;
+    height: 80px;
     width: auto;
     top: 10px;
     filter: drop-shadow(0px 0px 8px white);
@@ -70,8 +70,8 @@ body {
     display: flex;
     margin-left: auto;
     position: relative;
-    top: 20px;
-    z-index: 10;
+    top: 30px;
+    z-index: 10; 
 }
 
 .navbar .nav-links ul {
@@ -79,8 +79,8 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 20px;
-    font-size: 1.1em;
+    gap: 40px;
+    font-size: larger;
 }
 
 .navbar .nav-links ul li a {
@@ -120,8 +120,8 @@ body {
 .navbar .menu-hamburger {
     display: none;
     position: absolute;
-    right: 20px;
-    width: 30px;
+    right: 30px;
+    width: 35px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
@@ -129,7 +129,7 @@ body {
 
 /* Section avec image à gauche et texte à droite */
 .content-section {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -142,37 +142,36 @@ body {
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    padding: 15px;
+    padding: 20px;
 }
 
 .image-left {
     flex: 1;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     justify-content: center;
 }
 
 .image-left img {
-    width: 100%;
-    max-width: 300px;
+    width: 400px;
     height: auto;
     display: block;
 }
 
 .text-right {
     flex: 1;
-    padding: 15px;
+    padding: 20px;
     color: #fff;
 }
 
 .text-right h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 10px;
 }
 
 .text-right p {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 1.2em;
+    line-height: 1.5;
 }
 
 /* Styles pour les fleurs */
@@ -184,7 +183,7 @@ body {
 }
 
 .flower img {
-    width: 80px;
+    width: 100px;
     height: auto;
     display: block;
 }
@@ -214,7 +213,7 @@ body {
     transform: rotate(-15deg);
 }
 
-/* Animation pour effet flottant */
+/* Animation optionnelle pour un effet flottant */
 .flower {
     animation: float 6s ease-in-out infinite;
 }
@@ -225,12 +224,12 @@ body {
     100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
 }
 
-/* Responsive pour mobile */
+/* Responsive */
 @media screen and (max-width: 900px) {
     .navbar {
-        padding: 15px;
-        min-height: 60px;
+        padding: 20px;
         justify-content: center;
+        position: relative;
     }
 
     .navbar .logo {
@@ -239,28 +238,22 @@ body {
         transform: translateX(-50%);
     }
 
-    .navbar .logo img {
-        height: 50px;
-    }
-
     .navbar .menu-hamburger {
         display: block;
-        width: 25px;
-        cursor: pointer;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         left: -100%;
-        background-color: rgba(137, 43, 226, 0.9);
+        background-color: rgba(137, 43, 226, 0.234);
         backdrop-filter: blur(8px);
         width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: left 0.3s ease;
+        transition: left 0.5s ease;
         z-index: 5;
     }
 
@@ -271,95 +264,34 @@ body {
     .nav-links ul {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
     }
 
     .nav-links ul li {
-        margin: 20px 0;
-        font-size: 1.3em;
-    }
-
-    .nav-links ul li a {
-        font-size: 1.5em;
+        margin: 25px 0;
+        font-size: 1.2em;
     }
 
     /* Ajustement de la vague pour mobile */
     .header-main, .header-blur {
-        height: 120px;
-        clip-path: path("M0 0H1920V80C1600 160 1200 40 800 120C400 200 200 80 0 120Z");
+        height: 150px;
     }
 
     /* Responsive pour la section image/texte */
-    .content-section {
-        height: auto;
-        min-height: 100vh;
-        padding-top: 60px;
-    }
-
     .container {
         flex-direction: column;
-        padding: 10px;
+        text-align: center;
     }
 
     .image-left, .text-right {
         flex: none;
         width: 100%;
-        text-align: center;
-    }
-
-    .image-left img {
-        max-width: 250px;
-    }
-
-    .text-right h1 {
-        font-size: 1.5em;
-    }
-
-    .text-right p {
-        font-size: 0.9em;
     }
 
     /* Responsive pour les fleurs */
     .flower img {
-        width: 50px;
+        width: 60px;
     }
-
     .flower-2, .flower-4 {
         display: none;
-    }
-}
-
-/* Extra small screens (below 600px) */
-@media screen and (max-width: 600px) {
-    .navbar {
-        padding: 10px;
-    }
-
-    .navbar .logo img {
-        height: 40px;
-    }
-
-    .navbar .menu-hamburger {
-        width: 20px;
-    }
-
-    .header-main, .header-blur {
-        height: 100px;
-    }
-
-    .image-left img {
-        max-width: 200px;
-    }
-
-    .text-right h1 {
-        font-size: 1.3em;
-    }
-
-    .text-right p {
-        font-size: 0.85em;
-    }
-
-    .flower img {
-        width: 40px;
     }
 }
