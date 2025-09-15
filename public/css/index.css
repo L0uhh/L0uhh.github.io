@@ -232,12 +232,6 @@ body {
         position: relative;
     }
 
-    .navbar .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .navbar .menu-hamburger {
         display: block;
     }
@@ -245,7 +239,7 @@ body {
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -110%;
         background-color: rgba(137, 43, 226, 0.234);
         backdrop-filter: blur(8px);
         width: 100%;
@@ -269,11 +263,6 @@ body {
     .nav-links ul li {
         margin: 25px 0;
         font-size: 1.2em;
-    }
-
-    /* Ajustement de la vague pour mobile */
-    .header-main, .header-blur {
-        height: 150px;
     }
 
     /* Responsive pour la section image/texte */
